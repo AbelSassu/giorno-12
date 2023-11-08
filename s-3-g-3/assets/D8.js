@@ -21,39 +21,16 @@ function newElement() {
       div.style.display = "none";
     });
   }
-let close = document.getElementsByClassName("close");
-for (let i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    let div = this.parentElement;
-    div.style.display = "none";
+  let close = document.getElementsByClassName("close");
+  for (let i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      let div = this.parentElement;
+      div.style.display = "none";
+    }
   }
-}
-let list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'li') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
-
-function addDecorationAndIcon() {
-    const ul = document.querySelector('ul');
-    const liElements = document.querySelectorAll('li');
-  
-    liElements.forEach((li, index) => {
-      li.addEventListener('click', () => {
-        li.classList.toggle('completed');
-        if (li.classList.contains('completed')) {
-          const icon = document.createElement('i');
-          icon.classList.add('icon', 'ion-checkmark');
-          li.appendChild(icon);
-        } else {
-          const icon = li.querySelector('.ion-checkmark');
-          if (icon) {
-            li.removeChild(icon);
-          }
-        }
-      });
-    });
-  }
-  
-  addDecorationAndIcon();
+  let list = document.querySelector('ul');
+  list.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'li') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
