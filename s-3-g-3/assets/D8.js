@@ -21,16 +21,3 @@ function newElement() {
       div.style.display = "none";
     });
   }
-  let close = document.getElementsByClassName("close");
-  for (let i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      let div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
-  let list = document.querySelector('ul');
-  list.addEventListener('click', function(ev) {
-    if (ev.target.tagName === 'li') {
-      ev.target.classList.toggle('checked');
-    }
-  }, false);
